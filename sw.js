@@ -1,10 +1,10 @@
-/* Rumo aos 90 kg — funcionamento offline (versão 8) */
-const V="rumo90-v9", EXT="rumo90-ext";
+/* Rumo aos 70 kg — funcionamento offline (versão 1) */
+const V="rumo70-v2", EXT="rumo70-ext";
 const SHELL=["./","./index.html","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png"];
 const OPT=["./pdf.min.mjs","./pdf.worker.min.mjs"];
 self.addEventListener("install",e=>{ e.waitUntil(caches.open(V).then(async c=>{ await Promise.all(SHELL.map(u=>c.add(new Request(u,{cache:"reload"})).catch(()=>{}))); await Promise.all(OPT.map(u=>c.add(u).catch(()=>{}))); }).then(()=>self.skipWaiting())); });
 self.addEventListener("activate",e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!==EXT).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
-function idb(){ return new Promise((r,j)=>{ const q=indexedDB.open("rumo90",1);
+function idb(){ return new Promise((r,j)=>{ const q=indexedDB.open("rumo70",1);
   q.onupgradeneeded=()=>{ const d=q.result; if(!d.objectStoreNames.contains("kv")) d.createObjectStore("kv"); if(!d.objectStoreNames.contains("blobs")) d.createObjectStore("blobs"); };
   q.onsuccess=()=>r(q.result); q.onerror=()=>j(q.error); }); }
 function blob(id){ return idb().then(d=>new Promise((r,j)=>{ const g=d.transaction("blobs","readonly").objectStore("blobs").get(id); g.onsuccess=()=>r(g.result); g.onerror=()=>j(g.error); })); }
