@@ -44,5 +44,55 @@
         }
       ]
     }
-  }
+  },
+  "shortcuts": [
+    {
+      "name": "Registrar peso",
+      "short_name": "Peso",
+      "url": "./?a=peso#hoje",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Começar treino",
+      "short_name": "Treino",
+      "url": "./#treino",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Adicionar refeição",
+      "short_name": "Comida",
+      "url": "./#comida",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Painel e previsão",
+      "short_name": "Painel",
+      "url": "./#painel",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }
